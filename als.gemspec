@@ -12,12 +12,13 @@ Gem::Specification.new do |spec|
   spec.description   = "This is a POC of Envoy ALS Server, only do inspect for each received message"
   spec.homepage      = "https://github.com/dio/ruby-als-server"
 
-  spec.metadata["homepage_uri"]    = spec.homepage
+  spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/dio/ruby-als-server"
-  spec.metadata["changelog_uri"]   = "https://github.com/dio/ruby-als-server/CHANGELOG.md"
+  spec.metadata["changelog_uri"] = "https://github.com/dio/ruby-als-server/CHANGELOG.md"
 
   spec.files         = `git ls-files`.split($/)
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
 
   spec.add_dependency "grpc", "~> 1.22"
