@@ -11,7 +11,10 @@ module Als
             s = GRPC::RpcServer.new
             s.add_http2_port(port, :this_port_is_insecure)
             s.handle(ServerImpl.new)
+            # Since 1.20 we can do the following:
             s.run_till_terminated_or_interrupted([1, 'int', 'SIGQUIT'])
+            # Before that:
+            # s.run_till_terminated
         end
     end
 
