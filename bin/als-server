@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require "als/server"
+
+Als::Server.start

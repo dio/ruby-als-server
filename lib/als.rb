@@ -1,0 +1,2 @@
+module Als
+end
